@@ -1,0 +1,44 @@
+{
+  "name": "bluestemmontessori.com",
+  "version": "0.1.0",
+  "description": "Bluestem Montessori",
+  "main": "src/index.js",
+  "scripts": {
+    "preinstall": "echo \"module.exports = {port: 9900}\" > myconfig.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
+    "dev": "export NODE_ENV=development && npm run start -- --watch",
+    "prod": "export NODE_ENV=production && npm run start",
+    "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached  --content-base src"
+  },
+  "author": "Adam J. Erickson",
+  "license": "SEE LICENSE IN LINCENSE",
+  "engine": "node >= 0.4.1",
+  "devDependencies": {
+    "babel-core": "^6.7.4",
+    "babel-loader": "^6.2.4",
+    "babel-preset-es2015": "^6.6.0",
+    "css-loader": "^0.23.1",
+    "file-loader": "^0.8.5",
+    "html-loader": "^0.4.3",
+    "jscs": "^2.11.0",
+    "jscs-loader": "^0.2.0",
+    "ng-annotate-loader": "^0.1.0",
+    "node-sass": "^3.4.2",
+    "sass-loader": "^3.2.0",
+    "source-map-loader": "^0.1.5",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.12.14",
+    "webpack-dev-server": "^1.14.1",
+    "webpack-merge": "^0.8.4"
+  },
+  "dependencies": {
+    "angular": "^1.4.9",
+    "angular-local-storage": "^0.2.7",
+    "angular-ui-router": "^1.0.0-alpha.3",
+    "jquery": "^2.2.2",
+    "jquery.scrollto": "^2.1.2",
+    "messenger": "git+https://github.com/HubSpot/messenger.git"
+  }
+}

@@ -1,0 +1,16 @@
+/*****************************************
+ * TYPE
+ ****************************************/
+
+.#{$namespace}text--small {
+  @extend small;
+}
+
+pre {
+  @extend textarea;
+  background: $color-gray-light !important;
+}
+
+samp {
+  color: lighten($color-danger, 8%);
+}

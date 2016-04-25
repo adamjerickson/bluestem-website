@@ -15,7 +15,12 @@ webpackConfig = {
   },
   output: {
     path: './dist',
+
   },
+  externals: [
+    "StripeCheckout",
+    "StripeButton"
+  ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
       name: ['app', 'vendor'],
@@ -23,7 +28,9 @@ webpackConfig = {
     }),
     new webpack.ProvidePlugin({
         $: 'jquery',
-        jQuery: 'jquery'
+        jQuery: 'jquery',
+        
+        //StripeButton: 'stripe'
     })
   ],
   jscs: {
@@ -67,8 +74,9 @@ webpackConfig = {
 
       // Images
       {
-        test: /\.(png|jpg)$/,
-        loader: 'url-loader?mimetype=image/png'
+          test: /\.(jpe?g|png)$/i,
+          exclude: 'node_modules',
+          loader: 'url?limit=25000'
       }
     ]
   }
@@ -125,6 +133,32 @@ defaultConfig = {
 // Environment specific configs
 switch (nodeEnvironment) {
   case 'production':
+    defaultConfig.devtool = false; 
+    defaultConfig.debug = false,
+    defaultConfig.sourceMap = false,
+    
+    defaultConfig.plugins.push(new webpack.optimize.DedupePlugin());
+    defaultConfig.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
+    defaultConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
+        sourceMap: false,
+        compress: {
+          sequences: true,
+          dead_code: true,
+          conditionals: true,
+          booleans: true,
+          unused: true,
+          if_return: true,
+          join_vars: true,
+          drop_console: true
+        },
+        mangle: {
+          except: ['$super', '$', 'exports', 'require']
+        },
+        output: {
+          comments: false
+        } 
+      })
+    );
     break;
   case 'test':
     break;
@@ -133,5 +167,6 @@ switch (nodeEnvironment) {
   default:
     console.warn('Unknown or Undefigned Node Environment. Please refer to package.json for available build commands.');
 }
+
 
 module.exports = webpackMerge(defaultConfig, webpackConfig);

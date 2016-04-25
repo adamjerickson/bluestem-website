@@ -1,0 +1,547 @@
+// $ff-main: 'Whitney SSm A', 'Whitney SSm B', Helvetica, Arial, sans-serif;
+// $ff-header: 'Vitesse A', 'Vitesse B', Tahoma, Helvetica, Arial, sans-serif;
+
+// // Font Sizes
+// $fs-base: 14;
+// $fs-body: 16;
+// $fs-h1: 32;
+// $fs-h2: 24;
+// $fs-h3: 18;
+// $fs-h4: 14;
+
+// $fs-small: 12;
+
+// // Colors - Marketing Pantones
+// $orange: #D74127;
+// $darkGrey: #565759;
+// $darkGray: $darkGrey;
+// $green: #9A9B36;
+// $blue: #42748D;
+// $lightBlue: #8FB8C9;
+// $yellow: #FFC60A;
+
+
+// // Colors - Primary
+// $darkDarkGray: darken($darkGray, 40%);
+// $lightGray: lighten($darkGray, 48%);
+// $lighterGray: lighten($lightGray, 15%);
+
+
+// // Colors - Primary - For Text, mainly.  See through black for gray.
+// $darkGrayText: rgba(0,0,0,0.5);
+// $darkDarkGrayText: rgba(0,0,0,0.8);
+// $lightGrayText: rgba(0,0,0,0.3);
+
+
+// // Colors - Derivative
+
+// // Layout
+// $leftColWidth: 66.6%;
+// $rightColWidth: 33.4%;
+
+// $defaultPad: 10px;
+// $headerHeight: 44px;
+// $headerSubHeight: 18px;
+// $totalsHeight: 50px;
+
+
+// // Spacing
+// $padding--sm: $defaultPad / 2;
+// $padding--md: $defaultPad * 1.5;
+// $padding--lg: $padding--md * 1.5;
+// $padding--xl: $padding--lg * 2;
+
+// // Media Query Breakpoints
+// $mq-xsmall: 440px;
+// $mq-small: 760px;
+// $mq-medium: 1040px;
+// $mq-large: 1200px;
+
+
+
+
+
+
+
+
+
+
+
+
+// ============================ CUSTOM VARS ============================ //
+
+//------------------------------------
+// COLORS
+//------------------------------------
+
+$color-gray-dark:                                #262626; //lighten(#20252d, 5%);//#676C75;
+$color-gray-darker:                              darken($color-gray-dark, 12); //darken($color-gray-dark, 20%);
+$color-gray:                                     #666666;
+$color-gray-light:                               #f1f1f1; //f9fafb;
+$color-gray-ui:                                  $color-gray;
+// $color-green:                                 #859900;
+// $color-highlight:                             #fff;
+// $color-tint:                                  rgba(0,0,0,0.025);
+
+$brand-primary: #4a8971;
+$brand-secondary: #59312e;
+
+// Squares colors:
+$yellow: #d6b369;
+$blue: #4d5ba6;
+$purple: #926096;
+$olive: #60663f;
+$dark-brown: $brand-secondary;
+$light-brown: #7a5a58;
+$red: #a64c45;
+$green: $brand-primary;
+
+$near-black: #262626; // text and te like
+$dark-gray: #333333;
+$medium-gray: #666666;
+$light-gray: #999999;
+$light-light-gray: #dddddd;
+
+$color-primary:                                  #458FE2;
+$color-success:                                  #6bc6ca; //#6BCAA5;
+$color-info:                                     #5bc0de;
+$color-warning:                                  #f0ad4e;
+$color-danger:                                   #E86553; //#E66A54;
+
+$color-link:                                     $color-gray;
+$color-text:                                     $near-black;
+
+$font-vitesse:                                   "Vitesse A", "Vitesse B", Tahoma, Helvetica, Arial, sans-serif;
+$font-sans:                                      "Open Sans", "Helvetica Neue", Helvetica, Arial, sans-serif;
+$font-sarif:                                     "Roboto Slab", "Helvetica Neue", Helvetica, Arial, serif;
+
+$base-font:                                      $font-sans;
+$base-font-headings:                             $font-sans;
+
+$z-index:                                        9001 !default;
+
+$border-radius:                                  2px !default;
+
+
+
+// ============================ SETTINGS ============================ //
+
+//------------------------------------
+// DEFAULTS
+//
+// Source: inuit-defaults/settings.defaults
+//------------------------------------
+
+// High-level base settings.
+$base-font-size:                          16px !default;
+$base-line-height:                        24px !default;
+$base-text-color:                         $color-text !default; //#333 !default;
+$base-background-color:                   #fff !default;
+
+// Namespace.
+$namespace:                               '' !default;
+
+// These variables are framework variables, sourced from variables defined
+// above.
+$base-spacing-unit:                       $base-line-height !default;                // 24px
+$base-spacing-unit--tiny:                 round($base-spacing-unit / 4) !default;    // 6px
+$base-spacing-unit--small:                round($base-spacing-unit / 2) !default;    // 12px
+$base-spacing-unit--large:                round($base-spacing-unit * 2) !default;    // 48px
+$base-spacing-unit--huge:                 round($base-spacing-unit * 4) !default;    // 96px
+
+//------------------------------------
+// SETTINGS-RESPONSIVE
+//
+// Source: inuit-responsive-settings/settings.responsive
+//------------------------------------
+$breakpoints: (
+  // ...     >>   719px
+  "palm"          "screen and (max-width: 44.9375em)",
+  // 720px   >>   1023px
+  "lap"           "screen and (min-width: 45em) and (max-width: 63.9375em)",
+  // 720px   >>   ...
+  "lap-and-up"    "screen and (min-width: 45em)",
+  // ...     >>   1023px
+  "portable"      "screen and (max-width: 63.9375em)",
+  // 1024px  >>   ...
+  "desk"          "screen and (min-width: 64em)",
+  "retina"        "(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi), (min-resolution: 2dppx)"
+) !default;
+
+$responsive-settings:                     true;
+
+
+// ============================ TOOLS ============================ //
+
+//------------------------------------
+// WIDTHS
+//
+// Source: inuit-tools-widths/tools.widths
+//------------------------------------
+
+$widths-namespace:                        $namespace !default;
+$use-fractions:                           true !default;
+
+
+
+// ============================ GENERIC ============================ //
+
+//------------------------------------
+// BOX_SIZING
+//
+// Soruce: ui/styles/generic.box-sizing
+//------------------------------------
+
+$global-border-box:                       true;
+
+
+
+// ============================ BASE ============================ //
+
+//------------------------------------
+// HEADINGS
+//
+// Source: inuit-headings/base.headings
+//------------------------------------
+
+$heading-size-1:                          ($base-font-size + 20) !default; // 36px
+$heading-size-2:                          ($heading-size-1 - 8) !default; // 28px
+$heading-size-3:                          ($heading-size-2 - 6) !default; // 22px
+$heading-size-4:                          ($heading-size-3 - 4) !default; // 18px
+$heading-size-5:                          $base-font-size !default;   // 16px
+$heading-size-6:                          ($base-font-size - 2) !default; // 14px
+
+//------------------------------------
+// PARAGRAPHS
+//
+// Source: inuit-paragraphs/base.paragraphs
+//------------------------------------
+$lede-size:                               1.125 !default;
+
+
+
+// ============================ OBJECTS ============================ //
+
+//------------------------------------
+// BUTTONS
+//
+// Source: inuit-buttons/objects.buttons
+//------------------------------------
+$btn-namespace:                           $namespace !default;
+
+$btn-padding:                             halve($base-spacing-unit) - 2 !default;
+$btn-padding--tiny:                       quarter($btn-padding) !default;
+$btn-padding--small:                      halve($btn-padding) !default;
+$btn-padding--large:                      double($btn-padding) !default;
+$btn-background:                          $color-gray !default;
+$btn-color:                               $color-gray-dark !default;
+$btn-border-width:                        1px !default;
+$btn-border-style:                        solid !default;
+$btn-border-color:                        $btn-background !default;
+$btn-radius:                              $border-radius !default;
+
+$enable-btn--tiny:                        true !default;
+$enable-btn--small:                       true !default;
+$enable-btn--large:                       true !default;
+$enable-btn--full:                        true !default;
+$enable-btn--pill:                        true !default;
+$enable-btn--variants:                    true !default;
+$enable-btn--groups:                      true !default;
+
+//------------------------------------
+// LIST-UI
+//
+// Source: inuit-list-ui/objects.list-ui
+//------------------------------------
+
+$list-ui-namespace:                       $namespace !default;
+
+$list-ui-padding:                         $base-spacing-unit $base-spacing-unit--small !default;
+$list-ui-padding--tiny:                   quarter($base-spacing-unit) !default;
+$list-ui-padding--small:                  halve($base-spacing-unit) !default;
+$list-ui-padding--large:                  double($base-spacing-unit) double($base-spacing-unit--small) !default;
+$list-ui-padding--huge:                   quadruple($base-spacing-unit) quadruple($base-spacing-unit--small) !default;
+
+$list-ui-border-width:                    1px !default;
+$list-ui-border-style:                    solid !default;
+$list-ui-border-color:                    $color-gray !default;
+
+$enable-list-ui--tiny:                    true !default;
+$enable-list-ui--small:                   true !default;
+$enable-list-ui--large:                   false !default;
+$enable-list-ui--huge:                    false !default;
+
+//------------------------------------
+// LIST-BLOCK
+//
+// Source: inuit-list-block/objects.list-block
+//------------------------------------
+
+$list-block-namespace:                    $namespace !default;
+
+$list-block-padding:                      $base-spacing-unit !default;
+$list-block-padding--tiny:                quarter($list-block-padding) !default;
+$list-block-padding--small:               halve($list-block-padding) !default;
+$list-block-padding--large:               double($list-block-padding) !default;
+$list-block-padding--huge:                quadruple($list-block-padding) !default;
+
+$enable-list-block--tiny:                 true !default;
+$enable-list-block--small:                true !default;
+$enable-list-block--large:                true !default;
+$enable-list-block--huge:                 true !default;
+$enable-list-block--hover:                true !default;
+
+//------------------------------------
+// LIST-INLINE
+//
+// Source: inuit-list-inline/objects.list-inline
+//------------------------------------
+
+$list-inline-namespace:                   $namespace !default;
+
+$enable-list-inline--delimited:           true !default;
+$enable-list-inline--scrollable:          true !default;
+$list-inline-delimit-character:           ",\00A0" !default;
+
+//------------------------------------
+// TABLES
+//
+// Source: inuit-tables/objects.tables
+//------------------------------------
+
+$table-namespace:                         $namespace !default;
+
+$table-padding--compact:                  quarter($base-spacing-unit) halve($base-spacing-unit) !default;
+$table-padding--cosy:                     halve($base-spacing-unit) !default;
+$table-padding--comfy:                    $base-spacing-unit !default;
+
+$table-border-width:                      1px !default;
+$table-border-style:                      solid !default;
+$table-border-color:                      $color-gray !default;
+
+$enable-table--fixed:                     true !default;
+$enable-table--compact:                   true !default;
+$enable-table--cosy:                      true !default;
+$enable-table--comfy:                     true !default;
+$enable-table--cells:                     true !default;
+$enable-table--rows:                      true !default;
+$enable-table--columns:                   true !default;
+
+//------------------------------------
+// LAYOUTS
+//
+// Source: inuit-layout/objects.layout
+//------------------------------------
+
+$layout-namespace:                        $namespace !default;
+
+$layout-gutter:                           $base-spacing-unit !default;
+$layout-gutter--tiny:                     quarter($layout-gutter) !default;
+$layout-gutter--small:                    halve($layout-gutter) !default;
+$layout-gutter--large:                    double($layout-gutter) !default;
+$layout-gutter--huge:                     quadruple($layout-gutter) !default;
+
+$enable-layout--tiny:                     true !default;
+$enable-layout--small:                    true !default;
+$enable-layout--large:                    true !default;
+$enable-layout--huge:                     true !default;
+$enable-layout--flush:                    true !default;
+$enable-layout--rev:                      true !default;
+$enable-layout--middle:                   true !default;
+$enable-layout--bottom:                   true !default;
+$enable-layout--right:                    true !default;
+$enable-layout--center:                   true !default;
+$enable-layout--auto:                     true !default;
+
+//------------------------------------
+// FLAG
+//
+// Source: inuit-flag/objects.flag
+//------------------------------------
+
+$flag-namespace:                          $namespace !default;
+
+$flag-gutter:                             $base-spacing-unit !default;
+$flag-gutter--tiny:                       quarter($flag-gutter) !default;
+$flag-gutter--small:                      halve($flag-gutter) !default;
+$flag-gutter--large:                      double($flag-gutter) !default;
+$flag-gutter--huge:                       quadruple($flag-gutter) !default;
+
+$enable-flag--tiny:                       false !default;
+$enable-flag--small:                      false !default;
+$enable-flag--large:                      false !default;
+$enable-flag--huge:                       false !default;
+$enable-flag--rev:                        false !default;
+$enable-flag--flush:                      false !default;
+$enable-flag--top:                        false !default;
+$enable-flag--bottom:                     false !default;
+$enable-flag--responsive:                 false !default;
+$flag-collapse-at:                        720px !default;
+
+//------------------------------------
+// PACKS
+//
+// Source: inuit-pack/objects.pack
+//------------------------------------
+
+$pack-namespace:                          $namespace !default;
+
+$pack-gutter:                             $base-spacing-unit !default;
+$pack-gutter--tiny:                       quarter($pack-gutter) !default;
+$pack-gutter--small:                      halve($pack-gutter) !default;
+$pack-gutter--large:                      double($pack-gutter) !default;
+$pack-gutter--huge:                       quadruple($pack-gutter) !default;
+
+$enable-pack--auto:                       true !default;
+$enable-pack--tiny:                       true !default;
+$enable-pack--small:                      true !default;
+$enable-pack--large:                      false !default;
+$enable-pack--huge:                       false !default;
+$enable-pack--rev:                        false !default;
+$enable-pack--middle:                     true !default;
+$enable-pack--bottom:                     false !default;
+
+//------------------------------------
+// BOX
+//
+// Source: inuit-box/objects.box
+//------------------------------------
+
+$box-namespace:                           $namespace !default;
+
+$box-padding:                             $base-spacing-unit !default;
+$box-padding--tiny:                       quarter($box-padding) !default;
+$box-padding--small:                      halve($box-padding) !default;
+$box-padding--large:                      double($box-padding) !default;
+$box-padding--huge:                       quadruple($box-padding) !default;
+
+$enable-box--flush:                       true !default;
+$enable-box--tiny:                        true !default;
+$enable-box--small:                       true !default;
+$enable-box--large:                       true !default;
+$enable-box--huge:                        true !default;
+
+//------------------------------------
+// RULE
+//
+// Source: ui/styles/objects.rule
+//------------------------------------
+
+$rule-margin:                                   $base-spacing-unit !default;
+
+$enable-rule--ornament:                         true !default;
+$enable-rule--dashed:                           false !default;
+$enable-rule--dotted:                           false !default;
+
+//------------------------------------
+// CARD
+//
+// Source: ui/styles/objects.card
+//------------------------------------
+
+$card-padding:                                  $box-padding !default;
+$card-padding--small:                           halve($box-padding) !default;
+
+//------------------------------------
+// MENU
+//
+// Source: ui/styles/objects.menu
+//------------------------------------
+
+$menu-padding:                                  $btn-padding--small !default;
+$menu-background:                               transparent !default;
+$menu-background-inverse:                       $color-gray-dark !default;
+
+
+// ============================ COMPONENTS ============================ //
+
+$mastheadHeight:                          double($base-line-height) !default;
+
+
+
+// ============================ TRUMPS ============================ //
+
+//------------------------------------
+// SPACING
+//
+// Source: inuit-spacing/trumps.spacing
+//------------------------------------
+
+$spacing-namespace:                       $namespace !default;
+
+$margin:                                  $base-spacing-unit !default;
+$margin--small:                           halve($margin) !default;
+$margin--tiny:                            quarter($margin) !default;
+$margin--large:                           double($margin) !default;
+$margin--huge:                            quadruple($margin) !default;
+
+$padding:                                 $base-spacing-unit !default;
+$padding--small:                          halve($padding) !default;
+$padding--tiny:                           quarter($padding) !default;
+$padding--large:                          double($padding) !default;
+$padding--huge:                           quadruple($padding) !default;
+
+$enable-margins:                          true !default;
+$enable-margins--tiny:                    true !default;
+$enable-margins--small:                   true !default;
+$enable-margins--large:                   true !default;
+$enable-margins--huge:                    true !default;
+
+$enable-margins--negative:                false !default;
+$enable-margins--negative-tiny:           false !default;
+$enable-margins--negative-small:          false !default;
+$enable-margins--negative-large:          false !default;
+$enable-margins--negative-huge:           false !default;
+
+$enable-margins--none:                    true !default;
+
+$enable-paddings:                         true !default;
+$enable-paddings--tiny:                   true !default;
+$enable-paddings--small:                  true !default;
+$enable-paddings--large:                  true !default;
+$enable-paddings--huge:                   true !default;
+
+$enable-paddings--none:                   true !default;
+
+//------------------------------------
+// SPACING-RESPONSIVE
+//
+// Source: inuit-spacing-responsive/trumps.spacing-responsive
+//------------------------------------
+
+$enable-responsive-margins:                   true !default;
+$enable-responsive-margins--tiny:             true !default;
+$enable-responsive-margins--small:            true !default;
+$enable-responsive-margins--large:            true !default;
+$enable-responsive-margins--huge:             true !default;
+
+$enable-responsive-margins--negative:         false !default;
+$enable-responsive-margins--negative-tiny:    false !default;
+$enable-responsive-margins--negative-small:   false !default;
+$enable-responsive-margins--negative-large:   false !default;
+$enable-responsive-margins--negative-huge:    false !default;
+
+$enable-responsive-margins--none:             true !default;
+
+$enable-responsive-paddings:                  true !default;
+$enable-responsive-paddings--tiny:            true !default;
+$enable-responsive-paddings--small:           true !default;
+$enable-responsive-paddings--large:           true !default;
+$enable-responsive-paddings--huge:            true !default;
+
+$enable-responsive-paddings--none:            true !default;
+
+//------------------------------------
+// WIDTHS
+//
+// Source: inuit-widths/trumps.widths
+//------------------------------------
+
+$widths-columns:                          ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ) !default;
+
+//
+// WIDTHS-RESPONSIVE
+//
+// Source: inuit-widths-responsive/trumps.widths-responsive
+//
+$widths-columns-responsive:               ( 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 ) !default;

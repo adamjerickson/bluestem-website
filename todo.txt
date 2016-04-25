@@ -1,0 +1,22 @@
+x footer
+x header/navigation 
+x text review, more content/text in "a different kind of school
+    - emphasize our mission, values (5 things to remember)
+    - talk about community outreach 
+    - expand on accessibility
+x deploy
+
+WAAAAAYYYYY TOOOO BIIIIIIGGGGG - THIS THING IS 4 MEGS THERE'S SOMETHING GOING ON
+WITH WEBPACK.  THAT IS TOTALLY UNACCEPATBLE.  IF I JUST USED HTML AND COMPASS IT WOULD BE LIKE
+800 K MAYBE, AND THAT IS REALLY BIG, BUT I DO HAVE JQ, ANGULAR, AND STRIPE, BUT STILL.  STILL.
+WAY TO BIG.
+
+contact form
+words in the boxes
+images
+put images next to donate buttons
+put a note that we may not get that exact item with your money, or swap them out.
+
+imporove recipts - use webhooks and server side code
+
+ 

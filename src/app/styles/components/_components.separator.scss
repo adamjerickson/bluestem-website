@@ -1,0 +1,37 @@
+.separator {
+    height: 2.4em;
+    width: 100%;
+    margin-top: 0px;
+    
+    &.separator--green {
+        background-color: $green;
+    }
+    
+    &.separator--blue {
+        background-color: $blue;
+    }
+    
+    &.separator--purple {
+        background-color: $purple;
+    }
+    
+    &.separator--olive {
+        background-color: $olive;
+    }
+    
+    &.separator--dark-brown {
+        background-color: $dark-brown;
+    }
+    
+    &.separator--light-brown {
+        background-color: $light-brown;
+    }
+    
+    &.separator--red {
+        background-color: $red;
+    }
+    
+    &.separator--yellow {
+        background-color: $yellow;
+    }
+}

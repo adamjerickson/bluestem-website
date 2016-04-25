@@ -1,0 +1,121 @@
+/****************************************
+ * FORMS
+ ****************************************/
+
+$field-padding:         halve($base-spacing-unit) !default;
+$field-border-width:    1px !default;
+$field-border-style:    solid !default;
+$field-border-color:    $color-gray !default;
+$field-radius:          2px !default;
+$field-color:           $color-gray-dark !default;
+
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="url"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="week"],
+input[type="number"],
+input[type="search"],
+input[type="tel"],
+// input[type="color"],
+input:not([type]),
+select,
+textarea {
+  display: inline-block;
+  border: $btn-border-width $btn-border-style $btn-border-color;
+  padding: $btn-padding - $btn-border-width  $btn-padding - $btn-border-width;
+  box-shadow: inset 0 1px 3px $color-gray-light;
+  font: inherit;
+  // font-size: $base-font-size;
+  @include font-size($base-font-size, inherit);
+  vertical-align: middle;
+  background: white;
+  color: lighten($base-text-color, 10%);
+
+  @if($btn-radius != 0) {
+    border-radius: $btn-radius;
+  }
+
+  &:focus {
+    outline: 0;
+    border-color: darken($btn-border-color, 8%);
+    border-color: lighten($color-link, 20%);
+  }
+
+  &[disabled] {
+    cursor: not-allowed;
+    background-color: $color-gray-light;
+    color: darken($color-gray, 10%);
+  }
+
+  &.ng-invalid {
+    border-left-color: $color-danger;
+  }
+
+  &.#{$namespace}field--small {
+    padding: $btn-padding--small - $btn-border-width  $btn-padding--small - $btn-border-width;
+  }
+}
+
+
+select {
+  min-height: ($btn-padding * 2) + $base-line-height;
+
+  &.#{$namespace}field--small {
+    min-height: ($btn-padding--small * 2) + $base-line-height;
+  }
+}
+
+textarea {
+  resize: none;
+  overflow: auto;
+}
+
+
+.selectize-input {
+  @extend select;
+  overflow: hidden;
+}
+
+.selectize-dropdown {
+
+  .optgroup-header {
+    background: darken($color-gray-light, 10%);
+    font-weight: bold,
+  }
+}
+
+label {
+  color: lighten($base-text-color, 20%);
+  display: block;
+  font-weight: 600;
+  padding-bottom: quarter($base-spacing-unit);
+  @include font-size($base-font-size - 2, inherit);
+
+  small {
+    padding-top: quarter($base-spacing-unit);
+    font-size: 90%;
+    font-weight: normal;
+    display: block;
+  }
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+  width: $base-font-size;
+  height: $base-font-size;
+
+  &:focus {
+    outline: 0;
+  }
+
+  & + label {
+    display: inline-block;
+  }
+}

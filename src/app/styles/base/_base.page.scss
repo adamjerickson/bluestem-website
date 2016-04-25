@@ -1,0 +1,28 @@
+/*****************************************
+ * PAGE
+ *****************************************/
+
+// High-, page-level styling.
+
+html {
+  font-family: $base-font;
+  font-weight: 400;
+  font-size: ($base-font-size / 16px) * 1em;
+  line-height: $base-line-height / $base-font-size;
+  background-color: $base-background-color;
+  color: $base-text-color;
+  -webkit-text-size-adjust: 100%;
+      -ms-text-size-adjust: 100%;
+  -moz-osx-font-smoothing: grayscale;
+   -webkit-font-smoothing: antialiased;
+}
+
+body {
+  padding: 0;
+  
+}
+
+.masthead {
+  position: fixed;
+}
+

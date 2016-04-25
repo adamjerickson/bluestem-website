@@ -1,11 +1,10 @@
 'use strict';
 console.log('run.js is loading');
 
-function OnRun($rootScope, $state, $stateParams, localStorageService) {
+function OnRun($rootScope, $state, $stateParams) {
   'ngInject';
   // Force to /vc/items/0 & clear all cached data on run
-//   $state.go('main');
-  localStorageService.clearAll();
+  //$state.go('main');
 
   // Store state and params for later
   $rootScope.$state = $state;

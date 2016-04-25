@@ -1,0 +1,16 @@
+footer {
+    min-height: 3em;
+    background: $light-light-gray;
+    color: $dark-gray;
+    padding: $base-spacing-unit;
+    text-align: center;
+    @include font-size($base-font-size - 2);
+    
+    a {
+        color: $dark-gray;
+        &:hover {
+            text-decoration: underline;
+            color: $dark-gray;
+        }
+    }
+}

@@ -5,19 +5,17 @@ function routes($stateProvider) {
   'ngInject';
   $stateProvider
     .state('main', {
-      url: '/test',
+      url: '/',
       views: {
-        'header': {
-          //templateUrl: 'partials/header.html',
-          template: '<p>me is here</p>'
-        },
+        // 'header': {
+        //   templateUrl: 'app/partials/header.html',
+        // },
         'content': {
-          template: 'Hey, it is me.',
+          templateUrl: 'app/views/main.html',
           controller: 'MainController'
         },
         'footer': {
-          //templateUrl: 'partials/footer.html'
-          template: '<p>me is here</p>'
+          templateUrl: 'app/partials/footer.html'
         }
       }
     })

@@ -1,0 +1,39 @@
+/****************************************
+ * LINKS
+ ****************************************/
+
+a {
+  text-decoration: none;
+  color: $color-link;
+
+  // @include attention() {
+      // text-decoration: underline;
+  // }
+
+  &:hover {
+    color: $purple;
+  }
+}
+
+  .#{$namespace}link {
+    @extend a;
+  }
+
+  .#{$namespace}link--inverse {
+    @extend a;
+    color: $color-gray;
+
+    &:hover {
+      color: $color-link;
+    }
+
+    &.#{$namespace}active {
+      color: white !important;
+    }
+  }
+
+
+[ui-sref],
+[ng-click] {
+  cursor: pointer;
+}

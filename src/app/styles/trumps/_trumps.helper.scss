@@ -1,0 +1,123 @@
+/****************************************
+ * HELPERS
+ ****************************************/
+
+@mixin float($where: left) {
+  float: $where!important;
+}
+
+@mixin text($where: left) {
+  float: $where!important;
+}
+
+// Add/remove floats
+
+.#{$namespace}float--right {
+  float: right !important;
+}
+
+.#{$namespace}float--left {
+  float: left !important;
+}
+
+.#{$namespace}float--none {
+  float: none !important;
+}
+
+
+// Text alignment
+
+.#{$namespace}text--right {
+  text-align: right !important;
+}
+
+.#{$namespace}text--left {
+  text-align: left !important;
+}
+
+.#{$namespace}text--center {
+  text-align: center !important;
+}
+
+// Mute an object by reducing its opacity.
+.#{$namespace}muted{
+  opacity: 0.5!important;
+  filter: alpha(opacity = 50)!important;
+}
+
+
+.#{$namespace}selected {
+  // background: #9DD8DB;
+  background: #E3F3F4;
+}
+
+.#{$namespace}hidden {
+  border: 0!important;
+  clip: rect(0 0 0 0)!important;
+  height: 1px!important;
+  margin: -1px!important;
+  overflow: hidden!important;
+  padding: 0!important;
+  position:  absolute!important;
+  width: 1px!important;
+}
+
+
+[contenteditable]:not([sm-medium],[sm-editable]) {
+  border-bottom: 1px dashed transparent;
+  cursor: text;
+
+  &::after {
+    content: attr(data-placeholder);
+    color: lighten(#3E3E3E, 30%);
+    display: inline-block;
+  }
+}
+
+[contenteditable] {
+  &:hover,
+  &:focus {
+    border-bottom-color: lighten($color-link, 30%);
+    outline: none;
+  }
+}
+
+.#{$namespace}vertical-align,
+%#{$namespace}vertical-align {
+  // Internet Explorer 10
+  display: -ms-flexbox;
+  -ms-flex-align: center;
+
+  // Firefox
+  display: -moz-box;
+  -moz-box-align: center;
+
+  // Safari, Opera, and Chrome
+  display: -webkit-box;
+  -webkit-box-align: center;
+
+  // W3C
+  // display: flex;
+  // box-align: center;
+
+}
+
+.#{$namespace}horizontal-align,
+%#{$namespace}horizontal-align {
+  // Internet Explorer 10
+  display: -ms-flexbox;
+  -ms-flex-pack: center;
+
+  // Firefox
+  display: -moz-box;
+  -moz-box-pack: center;
+
+  // Safari, Opera, and Chrome
+  display: -webkit-box;
+  -webkit-box-pack: center;
+
+  // W3C
+  // display: flex;
+  // box-pack: center;
+
+}

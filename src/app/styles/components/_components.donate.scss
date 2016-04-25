@@ -1,0 +1,89 @@
+.donateSection {
+    background-color: $blue;
+    color: white;
+    
+    h1, h2, h3, h4, h5, h5 {
+        color: white;
+    }
+    
+    button {
+        background: white;
+        border: 2px solid white;
+        color: $near-black;
+        border-radius: 2px;
+        width: 200px;
+        margin: 10px;
+        display: inline;
+        padding: 6px 6px;
+        &:hover {
+            //color: $green;
+            //background-color: white;
+            //border-color: $green;
+            box-shadow: 0px 0px 16px 0px #4a4a4a;
+        }
+        &:active, &:focus {
+            //color: $light-brown;
+            //background-color: darken(white, 20%)
+            box-shadow: 0px 0px 6px 0px #4a4a4a;
+        }
+        
+        
+    }
+    
+    input {
+        padding: 6px 6px;
+        border: 2px solid darken($green, 5%);
+        width: 200px;
+    }
+    
+    label {
+        color: white;
+    }
+    
+    .form-group {
+        margin-left: 10px;
+        margin-top: $base-spacing-unit--small;
+        
+        input, button {
+            float: left;
+            @include media-query(portable) {
+                float: none;
+                display: block;
+            }
+        }
+        
+        input {
+            border-color: white;
+        }
+        
+        button {
+            margin-top: 0px;
+            width: initial;
+            background-color: transparent;
+            color: white;
+            border-color: white;
+            padding-left: 10px;
+            padding-right: 10px;
+            
+            @include media-query(portable) {
+                display: block;
+                margin-top: $base-spacing-unit--tiny;
+            }         
+        }
+        
+        label {
+            margin-left: 1px;
+        }
+    }
+    
+    
+    @include media-query(portable) {
+      button.donate--another {    
+        display: block;
+        margin-top: $base-spacing-unit--tiny;
+        margin-left: 0;
+      }  
+    }
+    
+   
+}

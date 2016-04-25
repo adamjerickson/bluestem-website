@@ -1,0 +1,84 @@
+.squares {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-end;
+    justify-content: flex-end;
+    
+   
+    @include media-query(palm) {
+        padding-right: 2%;
+    }
+    
+    .square {
+        height: 16vw;
+        width: 16vw;
+        border: 1px solid gray;
+        
+        h1, h2, h3, h4, h5, h6, p, span {
+            line-height: 1.2em; 
+        }
+        
+        @include media-query(palm) {
+            height: 32vw;
+            width: 32vw;
+        }
+        
+    }
+    
+     &.squares--colored .square {
+        border-left: 3px solid white;
+        border-bottom: 3px solid white;
+        border-top: 0;
+        border-right: 0;
+        
+        // Colors
+        &:nth-child(1) {
+            background-color: $yellow;
+        }
+        &:nth-child(2) {
+            background-color: $blue;
+        }
+        &:nth-child(3) {
+            background-color: $purple;
+        }
+        &:nth-child(4) {
+            background-color: $olive;
+        }
+        &:nth-child(5) {
+            background-color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 8px;
+            
+            img {
+                margin-top: -7px;
+            }
+        }
+        &:nth-child(6) {
+            background-color: $dark-brown;
+        }
+        &:nth-child(7) {
+            background-color: $light-brown;
+        }
+        &:nth-child(8) {
+            background-color: $red;
+        }
+        &:nth-child(9) {
+            background-color: $green;
+        }
+        
+        
+    }
+    &.squares--borderless .square {
+        background-color: transparent;
+        border-width: 0;
+        
+        &:nth-child(5) {
+            padding-top: 1.2em;
+        }
+    }
+    
+    
+}

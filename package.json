@@ -6,7 +6,7 @@
   "scripts": {
     "preinstall": "echo \"module.exports = {port: 9900}\" > myconfig.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/webpack --inline --colors --progress --display-error-details --display-cached",
+    "build-prod": "export NODE_ENV=production && ./node_modules/.bin/webpack --production --display-modules",
     "dev": "export NODE_ENV=development && npm run start -- --watch",
     "prod": "export NODE_ENV=production && npm run start",
     "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached  --content-base src"
@@ -35,10 +35,8 @@
   },
   "dependencies": {
     "angular": "^1.4.9",
-    "angular-local-storage": "^0.2.7",
     "angular-ui-router": "^1.0.0-alpha.3",
     "jquery": "^2.2.2",
-    "jquery.scrollto": "^2.1.2",
-    "messenger": "git+https://github.com/HubSpot/messenger.git"
+    "sweetalert": "^1.1.3"
   }
 }

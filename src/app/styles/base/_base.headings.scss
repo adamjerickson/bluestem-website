@@ -1,0 +1,63 @@
+/***************************************
+ * HEADINGS
+ ****************************************/
+
+// Headings 1–6.
+
+// Predefine the variables below in order to alter and enable specific features.
+$heading-size-1:  36px !default;
+$heading-size-2:  30px !default;
+$heading-size-3:  24px !default;
+$heading-size-4:  20px !default;
+$heading-size-5:  16px !default;
+$heading-size-6:  14px !default;
+
+h1 {
+  @include font-size($heading-size-1);
+}
+
+h2 {
+  @include font-size($heading-size-2);
+}
+
+h3 {
+  @include font-size($heading-size-3);
+}
+
+h4 {
+  @include font-size($heading-size-4);
+}
+
+h5 {
+  @include font-size($heading-size-5);
+}
+
+h6 {
+  @include font-size($heading-size-6);
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $base-font-headings;
+  font-weight: 400;
+  color: $color-gray-dark;
+  margin-bottom: $base-spacing-unit--small;
+  margin-bottom: ($base-spacing-unit--small / $base-font-size) * 1rem;
+}
+
+h5, h6 {
+  font-weight: 600;
+}
+
+@include media-query(portable) {
+  h1 {
+    @include font-size($heading-size-2);
+  }
+
+  h2 {
+    @include font-size($heading-size-3);
+  }
+
+  h3 {
+    @include font-size($heading-size-4);
+  }
+}

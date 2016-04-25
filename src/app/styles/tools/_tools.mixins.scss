@@ -1,0 +1,166 @@
+//------------------------------------
+// MIXINS
+//------------------------------------
+
+// inuitcss has a number of default mixins that the framework, and developers
+// working with it, can make use of.
+
+// The inuitcss `mixins` module contains a few framework mixins that are
+// **required** for using any of the rest of inuitcss.
+
+
+// Dependencies
+//------------------------------------
+
+// * settins/defaults
+
+
+// Usage
+//------------------------------------
+
+// Create a fully formed type style (sizing and vertical rhythm) by passing in a
+// single value, e.g.:
+//
+// .foo {
+//     @include font-size(12px);
+// }
+//
+// This will generate a rem-based font-size with its pixel fallback, as well as
+// a unitless line-height which will place the element on your baseline, e.g.:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+//     line-height: 2;
+// }
+//
+// If you do not want inuitcss to generate you a line-height automatically, you
+// simply pass in your own as a second paramater:
+//
+// .foo {
+//     @include font-size(12px, 1.5);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+//     line-height: 1.5;
+// }
+//
+// This parameter can be any integer, ‘inherit’, or ‘normal’. If you don’t want
+// a line-height at all, pass in a second paramater of ‘none’ or ‘false’:
+//
+// .foo {
+//     @include font-size(12px, none);
+// }
+//
+// This will yield:
+//
+// .foo {
+//     font-size: 12px;
+//     font-size: 0.75rem;
+// }
+
+@mixin font-size($font-size, $line-height: auto) {
+  font-size: $font-size;
+  // font-size: ($font-size / $base-font-size) * 1rem;
+
+  @if $line-height == auto {
+    line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+  }
+
+  @else {
+
+    @if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+      line-height: $line-height;
+    }
+
+    @else if ($line-height != none and $line-height != false) {
+      @warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`."
+    }
+
+  }
+}
+
+
+@mixin button_variant($background, $color: lighten(complement($background), 90%), $border: darken($background, 5%)) {
+
+  &,
+  &:focus {
+    background: $background;
+    color: $color;
+    border-color: $border;
+    // text-transform: uppercase;
+    outline: 0;
+  }
+
+  &:hover,
+  &:active {
+    color: darken($color, 15%) !important;
+    // background-color: darken($background, 5%) !important;
+
+    @if $background == transparent {
+      background-color: lighten($color-gray, 10%) !important;
+      border-color: lighten($color-gray, 4%) !important;
+    }
+    @else {
+      background-color: darken($background, 7%) !important;
+      border-color: darken($border, 5%) !important;
+    }
+  }
+
+  &[disabled]:hover {
+    cursor: not-allowed;
+    // color: lighten($color, 15%) !important;
+    // background-color: lighten($background, 25%) !important;
+    // border-color: lighten($border, 20%) !important;
+  }
+}
+
+@mixin placeholder($color: $color-gray-ui) {
+  // Firefox
+  &:-moz-placeholder {
+    color: $color !important;
+    opacity: 1.0 !important; // Override Firefox's unusual default opacity; see https://github.com/twbs/bootstrap/pull/11526
+  }
+  &::-moz-placeholder {
+    color: $color !important;
+    opacity: 1.0 !important;
+  }
+  &:-ms-input-placeholder {
+    color: $color !important;
+    opacity: 1.0 !important;
+  } // Internet Explorer 10+
+  &::-webkit-input-placeholder  {
+    color: $color !important;
+    opacity: 1.0;
+  } // Safari and Chrome
+}
+
+@mixin box-shadow($top: 0, $left: 0, $blur: 5px, $color: $color-gray) {
+  -webkit-box-shadow: $left $top $blur $color;
+    -moz-box-shadow: $left $top $blur $color;
+    box-shadow: $left $top $blur $color;
+}
+
+@mixin inner-box-shadow($top: 0, $left: 0, $blur: 5px, $color: $color-gray) {
+  -webkit-box-shadow: inset $left $top $blur $color;
+    -moz-box-shadow: inset $left $top $blur $color;
+    box-shadow: inset $left $top $blur $color;
+}
+
+@mixin vertical-align($justify: space-between) {
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+
+  -ms-flex-align: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+
+  align-items: center;
+
+  justify-content: $justify;
+}

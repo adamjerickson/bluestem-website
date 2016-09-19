@@ -12,7 +12,19 @@ function routes($stateProvider) {
         // },
         'content': {
           templateUrl: 'app/views/main.html',
-          controller: 'MainController'
+          controller: 'MainController as ctrl'
+        },
+        'footer': {
+          templateUrl: 'app/partials/footer.html'
+        }
+      }
+    })
+    .state('contacts', {
+      url: '/contacts',
+      views: {
+        'content': {
+          templateUrl: 'app/views/contacts.html',
+          controller: 'ContactsController as ctrl'
         },
         'footer': {
           templateUrl: 'app/partials/footer.html'

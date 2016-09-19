@@ -6,17 +6,24 @@ x text review, more content/text in "a different kind of school
     - expand on accessibility
 x deploy
 
-WAAAAAYYYYY TOOOO BIIIIIIGGGGG - THIS THING IS 4 MEGS THERE'S SOMETHING GOING ON
-WITH WEBPACK.  THAT IS TOTALLY UNACCEPATBLE.  IF I JUST USED HTML AND COMPASS IT WOULD BE LIKE
-800 K MAYBE, AND THAT IS REALLY BIG, BUT I DO HAVE JQ, ANGULAR, AND STRIPE, BUT STILL.  STILL.
-WAY TO BIG.
+x words in the boxes
 
 contact form
-words in the boxes
 images
 put images next to donate buttons
 put a note that we may not get that exact item with your money, or swap them out.
 
 imporove recipts - use webhooks and server side code
 
- 
+sliders - more info on Montessori, how it's taught
+animations/paralax
+on mobile, put boxes on top?  something else with the middle of the box/animte?
+
+
+
+
+firebase write is working, 
+read is commented out for now
+write a separate app to read (run it locally), or just log into firebase to read for now
+write the contact form
+optionally make a user and log them in for write-only access to only be able to push.

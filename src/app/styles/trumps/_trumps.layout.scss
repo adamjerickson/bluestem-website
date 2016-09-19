@@ -1,11 +1,27 @@
-// .u-3\/4 {    
+// .u-3\/4 {
 //     width: 74% !important;
 // }
 
-// .u-2\/5 {    
+// .u-2\/5 {
 //     width: 39% !important;
 // }
 
 .padded-container{
     padding: $base-spacing-unit;
+}
+.padded-container--dark {
+    a.button {
+        color: white;
+        border: 1px solid white;
+        border-radius: 4px;
+        padding: $base-spacing-unit--small;
+        margin-top: $base-spacing-unit--small;
+        margin-bottom: $base-spacing-unit;
+        margin-left: $base-spacing-unit--small;
+        display: inline-block;
+        &:hover {
+            background: white;
+            color: $color-gray-dark;
+        }
+    }
 }

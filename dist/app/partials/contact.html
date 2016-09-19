@@ -1,5 +1,18 @@
 <div class="padded-container">
     <h1>Contact</h1>
-    <p>We'd love to hear from you.</p>
-    <p>Please email us at <a href="mailto:info@bluestemmontessori.com">info@bluestemmontessori.com</a>, and we'll get back to you in a jiffy.</p>    
+    <p>Follow us on
+        <a clas="social-link" href="https://www.facebook.com/bluestemmontessori/" target="_blank">Facebook</a>
+    </p>
+
+    <p>Or, drop us a line.  We love answering questions.</p>
+
+    <form class="form--block" name="ctrl.contactFrm">
+        <input placeholder="Name" type="text" ng-model="contact.name"></input>
+        <input placeholder="Email" type="text" ng-model="contact.email"></input>
+        <input placeholder="Phone" type="text" ng-model="contact.phone"></input>
+        <textarea placeholder="Ask a question, or speak your mind here." ng-model="contact.message"></textarea>
+        <label><input type="checkbox" ng-model="contact.newsletter"></input>Keep me up to date!  I want periodic emails about Bluestem.</label>
+        <label><input type="checkbox" ng-model="contact.enrollInterest"></input>I want to know more about enrolling my child/children for the 2017-2018 school year.</label>
+        <button class="btn btn--green" ng-click="addContact()">Send it!</button>
+    </form>
 </div>

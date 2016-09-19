@@ -1,0 +1,59 @@
+.contact {
+  border: 1px solid $color-gray-ui;
+  background-color: $color-gray-light;
+  margin: $base-spacing-unit 0;
+  padding: $base-spacing-unit;
+
+  .contact-header {
+    color: $color-gray-ui;
+    font-weight: normal;
+    background: white;
+
+    .received {
+      float: left;
+      font-size: 14px;
+      color: $medium-gray;
+    }
+
+    .contacted {
+      float: right;
+      label {
+        color: $medium-gray;
+      }
+    }
+
+  }
+
+  .clearfix {
+    clear: both;
+  }
+
+  button {
+    margin: $base-spacing-unit;
+  }
+  dt {
+    font-weight: bold;
+    display: inline-block;
+  }
+  dd {
+    margin-left: $base-spacing-unit--small;
+    display: inline-block;
+  }
+
+  .form--inline {
+    border: 1px solid $color-gray-ui;
+    border-left: 0;
+    border-right: 0;
+    padding: $base-spacing-unit--small 0;
+    margin-top: $base-spacing-unit;
+    label, input {
+      display: inline
+    }
+    label {
+      margin-left: $base-spacing-unit--small;
+    }
+    label:nth-child(1) {
+      margin-left: 0;
+    }
+  }
+}

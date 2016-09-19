@@ -9,3 +9,37 @@
 .align-right {
     text-align: right;
 }
+
+.layout {
+    &.layout--green {
+        background-color: $green;
+    }
+
+    &.layout--blue {
+        background-color: $blue;
+    }
+
+    &.layout--purple {
+        background-color: $purple;
+    }
+
+    &.layout--olive {
+        background-color: $olive;
+    }
+
+    &.layout--dark-brown {
+        background-color: $dark-brown;
+    }
+
+    &.layout--light-brown {
+        background-color: $light-brown;
+    }
+
+    &.layout--red {
+        background-color: $red;
+    }
+
+    &.layout--yellow {
+        background-color: $yellow;
+    }
+}

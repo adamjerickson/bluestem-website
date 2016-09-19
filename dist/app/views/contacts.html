@@ -1,0 +1,63 @@
+<div class="padded-container">
+  <h1>Contacts</h1>
+
+  <div>
+    <button ng-click="getContacts()">Refresh Contacts</button>
+  </div>
+
+  <div ng-repeat="contact in contacts" class="contact">
+    <div class="contact-header">
+      <div class="received">
+        <dt class="date">Received:</dt>
+        <dd>{{contact.dateOfContact | date}}</dd>
+      </div>
+      <div class="contacted">
+        <label>
+          <input type="checkbox" ng-checked="contact.contactedByBluestem" ng-model="contact.contactedByBluestem" ng-change="updateContact(contact)">
+          Replied-to
+        </label>
+      </div>
+    </div>
+    <div class="clearfix">
+    </div>
+    <dl>
+      <div>
+        <dt>
+          Name:
+        </dt>
+        <dd>
+          {{contact.name}}
+        </dd>
+      </div>
+
+      <div>
+        <dt>
+          Email:
+        </dt>
+        <dd>
+          {{contact.email}}
+        </dd>
+      </div>
+      <div>
+        <dt>
+          Phone:
+        </dt>
+        <dd>
+          {{contact.phone}}
+        </dd>
+      </div>
+      <div>
+        <dt>
+          Message:
+        </dt>
+        <dd>
+          {{contact.message ? contact.message : "No message."}}
+        </dd>
+      </div>
+      <div class="form--inline">
+        <label><input type="checkbox" ng-checked="contact.newsletter">Newsletter</label>
+        <label><input type="checkbox" ng-checked="contact.enrollInterest">Enrollment Interest</label>
+        <label><input type="checkbox" ng-checked="contact.donor" />Donor</label>
+      </div>
+  </div>
+</div>

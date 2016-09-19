@@ -33,7 +33,6 @@
 //
 // Far reaching rulesets (e.g. resets).
 //------------------------------------
-@import "app/styles/generic/generic.fonts";
 @import "app/styles/generic/generic.normalize";
 @import "app/styles/generic/generic.box-sizing";
 @import "app/styles/generic/generic.reset";
@@ -94,7 +93,8 @@
 @import "app/styles/components/components.layout";
 @import "app/styles/components/components.separator";
 @import "app/styles/components/components.donate";
-//@import "app/styles/components/components.image-sections";
+@import "app/styles/components/components.forms";
+@import "app/styles/components/components.contact";
 
 
 //------------------------------------
@@ -109,5 +109,6 @@
 @import "app/styles/trumps/trumps.helper";
 @import "app/styles/trumps/trumps.layout";
 @import "app/styles/trumps/trumps.headings";
+@import "app/styles/trumps/trumps.buttons";
 
 @import "app/styles/components/components.sweetalert";

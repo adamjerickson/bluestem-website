@@ -25,7 +25,10 @@ require('./app/routes').default(app);
 
 // Controllers
 require('./app/controllers/index.controller').default(app);
+require('./app/controllers/contacts.controller').default(app);
 
+// Services
+require('./app/services/firebase.service').default(app);
 
 // Templates
 import './templates';

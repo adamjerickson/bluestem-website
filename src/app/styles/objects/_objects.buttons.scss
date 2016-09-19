@@ -11,7 +11,7 @@ $btn-padding:           halve($base-spacing-unit) !default;
 $btn-padding--tiny:     quarter($btn-padding) !default;
 $btn-padding--small:    halve($btn-padding) !default;
 $btn-padding--large:    double($btn-padding) !default;
-$btn-background:        #4a8ec2 !default;
+$btn-background:        $brand-primary !default;
 $btn-color:             #fff !default;
 $btn-border-width:      1px !default;
 $btn-border-style:      solid !default;

@@ -1,15 +1,18 @@
 'use strict';
 
-function ControllerFn($scope, $state, $stateParams, $timeout, $http, $location, $anchorScroll) {
+function ControllerFn($rootScope, $scope, $state, $stateParams, $timeout, $http, $location, $anchorScroll, FirebaseService) {
   'ngInject';
-  
+
   // Methods
   $scope.donate = Donate;
   $scope.donateCustom = DonateCustom;
   $scope.goTo = GoTo;
- 
-  
+  $scope.getContacts = GetContacts;
+  $scope.addContact = AddContact;
+  $scope.newContact = NewContact;
+
   // Properties
+  $scope.contact = $scope.newContact();
   $scope.amts = {};
   $scope.amts.isValid = true;
   $scope.donation = {};
@@ -41,20 +44,20 @@ function ControllerFn($scope, $state, $stateParams, $timeout, $http, $location, 
         );
       }
     });
-  
+
+  // Internal methods
   function Donate(amt, thing, e) {
     var description;
-    
-    
+
     if (thing == '') {
       description = 'Donation';
     } else {
       description = 'Donation: ' + thing;
     }
-    
+
     $scope.donation.amt = amt;
     $scope.donation.description = 'Bluestem Montessori ' + description;
-    
+
     $scope.handler.open({
         name: 'Bluestem Montessori',
         description: description,
@@ -66,29 +69,76 @@ function ControllerFn($scope, $state, $stateParams, $timeout, $http, $location, 
     $(window).on('popstate', function() {
       handler.close();
     });
-  
-  
   }
-  
-  function DonateCustom(e) {    
+
+  function DonateCustom(e) {
     if (typeof($scope.amts.customAmt) === 'undefined' || $scope.amts.customAmt === '' || isNaN(Number($scope.amts.customAmt))) {
         $scope.amts.isValid = false;
         console.log('not valid');
     } else {
-      
+
       $scope.amts.isValid = true;
         $scope.donate($scope.amts.customAmt * 100, '', e);
-      
+
     }
   }
-  
+
   function GoTo(anchor) {
     // set the location.hash to the id of
       // the element you wish to scroll to.
       $location.hash(anchor);
-      
+
       // call $anchorScroll()
       $anchorScroll();
+  }
+
+  function GetContacts() {
+    FirebaseService.getContacts().then(
+      function(data) {
+        console.log(data);
+      }
+    )
+  }
+
+  function NewContact() {
+    return {
+      name: '',
+      email: '',
+      phone: '',
+      newsletter: 0,
+      enrollInterest: 0,
+      donor: 0,
+      message: '',
+      dateOfContact: 0
+    };
+  }
+  function AddContact() {
+    var data = {
+      name: $scope.contact.name,
+      email: $scope.contact.email,
+      phone: $scope.contact.phone,
+      donor: $scope.contact.donor,
+      enrollInterest: $scope.contact.enrollInterest,
+      newsletter: $scope.contact.newsletter,
+      message: $scope.contact.message,
+      dateOfContact: new Date().toString(),
+      contactedByBluestem: false
+    }
+
+    var result = FirebaseService.addContact(data);
+    $scope.contact = $scope.newContact();
+    this.$parent.ctrl.contactFrm.$setPristine();
+    var myScope = $scope;
+    result.then(
+      function(data) {
+        swal('Thanks!', 'We\'re so glad you took the time to contact us.  We\'ll be in touch soon.');
+
+      },
+      function(error) {
+        console.log('rejected');
+        console.log(error);
+      }
+    )
   }
 }
 

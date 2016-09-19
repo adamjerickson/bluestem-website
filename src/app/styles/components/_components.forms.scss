@@ -1,0 +1,16 @@
+form.form--block {
+    input:not([type="checkbox"]), textarea {
+        display: block;
+        width: 100%;
+    }
+    input, textarea {
+        margin-bottom: $base-spacing-unit--small;
+    }
+    
+    label input {
+        display: inline-block;
+        margin-right: 0.667em; 
+    }
+    
+        
+}

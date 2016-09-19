@@ -19,7 +19,8 @@ webpackConfig = {
   },
   externals: [
     "StripeCheckout",
-    "StripeButton"
+    "StripeButton",
+    "Typekit"
   ],
   plugins: [
     new webpack.optimize.CommonsChunkPlugin({
@@ -29,7 +30,7 @@ webpackConfig = {
     new webpack.ProvidePlugin({
         $: 'jquery',
         jQuery: 'jquery',
-        
+
         //StripeButton: 'stripe'
     })
   ],
@@ -133,10 +134,10 @@ defaultConfig = {
 // Environment specific configs
 switch (nodeEnvironment) {
   case 'production':
-    defaultConfig.devtool = false; 
+    defaultConfig.devtool = false;
     defaultConfig.debug = false,
     defaultConfig.sourceMap = false,
-    
+
     defaultConfig.plugins.push(new webpack.optimize.DedupePlugin());
     defaultConfig.plugins.push(new webpack.optimize.AggressiveMergingPlugin());
     defaultConfig.plugins.push(new webpack.optimize.UglifyJsPlugin({
@@ -156,7 +157,7 @@ switch (nodeEnvironment) {
         },
         output: {
           comments: false
-        } 
+        }
       })
     );
     break;

@@ -10,6 +10,10 @@
     padding: $base-spacing-unit;
 }
 .padded-container--dark {
+    h1, h2, h3, h4, h5, h6, p, blockquote, a, ul, li, ol, dd, dt {
+        color: white;
+    }
+
     a.button {
         color: white;
         border: 1px solid white;

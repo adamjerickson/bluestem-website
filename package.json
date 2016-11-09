@@ -11,6 +11,7 @@
     "prod": "export NODE_ENV=production && npm run start",
     "start": "./node_modules/.bin/webpack-dev-server --inline --colors --progress --display-error-details --display-cached  --content-base src"
   },
+  "repository": "",
   "author": "Adam J. Erickson",
   "license": "SEE LICENSE IN LINCENSE",
   "engine": "node >= 0.4.1",

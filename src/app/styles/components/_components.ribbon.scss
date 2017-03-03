@@ -9,3 +9,8 @@
 .ribbon.blue {
     @include leftRibbon($blue);
 }
+
+.ribbon.purple {
+    @include leftRibbon($purple);
+}
+

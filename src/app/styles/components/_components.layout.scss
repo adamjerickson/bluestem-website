@@ -75,6 +75,10 @@
         border-bottom: 1px solid $yellow;
     }
 
+    &.layout--whiteBorder {
+        border-bottom: 1px solid $yellow;
+    }
+
     &.layout--border {
         border-bottom: 1px solid $color-gray-light;
     }

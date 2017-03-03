@@ -47,4 +47,10 @@
       color: white;
       border-color: white;
     }
+
+    &.boxLink--yellow {
+      background-color: $yellow;
+      border-color: $yellow;
+      color: $near-black;
+    }
   }

@@ -3,38 +3,57 @@
 
 
 <!-- Above the fold -->
-    <!-- Tagline and Squares-->
+<!-- Tagline and Squares-->
 <section class="layout">
     <a id="home"></a>
     <div class="layout__item layout__item--no-padding u-1/2 u-1/1-palm" ng-include="'app/partials/tagline.html'"></div><!--
  --><div class="layout__item layout__item--no-padding u-1/2 u-1/1-palm" ng-include="'app/partials/squares.html'"></div>
 </section>
 
+<section class="layout">
+    <a id="about"></a>
+    <div class="layout__item u-1/1 u-1/1-palm" ng-include="'app/partials/headerAbout.html'"></div>
+</section>
+
+<section class="layout layout--border">
+    <!--
+    Right side -- text
+  --><div class="layout__item u-4/5 u-1/1-palm" ng-include="'app/partials/whyBluestem.html'"></div><!--
+    Left side spacer or image
+  --><div class="layout__item u-1/5 u-1/1-palm"></div>
+</section>
+
 <!-- Montessori is ... -->
-<!-- Top part --- text -->
-<section class="layout layout--yellow">
-    <a id="method"></a>
+<section class="layout layout--border">
     <div class="layout__item u-4/5 u-1/1-palm" ng-include="'app/partials/whyMontessori.html'"></div><!--
  --><div class="layout__item u-1/5 u-1/1-palm " ></div>
 </section>
 
-<!-- Bottom part -- sliders -->
-
-
-<!-- <Bluestem is different because -->
-
-<section class="layout layout--purple">
-    <a id="school"></a>
-    <!-- Left side spacer or image -->
-    <div class="layout__item u-1/5 u-1/1-palm"></div><!--
-    Right side -- text
-  --><div class="layout__item u-4/5 u-1/1-palm" ng-include="'app/partials/whyBluestem.html'"></div>
+<section class="layout layout--border">
+    <div class="layout__item u-3/6 u-1/1-palm" ng-include="'app/partials/location.html'"></div><!--
+ --><div class="layout__item u-3/6 u-1/1-palm "></div><!--  ng-include="'app/partials/locationImage.html'" -->
 </section>
 
-<!-- Bona Fides -->
-<!--<section class="layout">
-    <div class="layout__item u-1/1" ng-include="'app/partials/bonaFides.html'"></div>
-</section>-->
+
+<section class="layout layout--border">
+    <a id="staff"></a>
+    <!--
+    Right side -- text
+  --><a id="laura"></a><div class="layout__item u-3/6 u-1/1-palm" ng-include="'app/partials/laura.html'"></div><!--
+    Left side spacer or image
+  --><a id="heather"></a><div class="layout__item u-3/6 u-1/1-palm" ng-include="'app/partials/heather.html'"></div>
+</section>
+
+
+<!-- Events -->
+<section class="layout layout--blue">
+    <a id="familynight"></a>
+    <!--
+    Right side -- text
+  --><div class="layout__item u-4/5 u-1/1-palm" ng-include="'app/partials/familyNight.html'"></div><!--
+    Right spacer 
+  --><div class="layout__item u-1/5 u-1/1-palm"></div>
+</section>
 
 <!-- Enroll -->
 <section class="layout">
@@ -42,7 +61,13 @@
     <div class="layout__item u-1/1" ng-include="'app/partials/enroll.html'"></div>
 </section>
 
-<!-- Status -->
+<!-- Contact -->
+<section class="layout">
+    <a id="contact"></a>
+    <div class="layout__item u-5/5" ng-include="'app/partials/contact.html'"></div>
+</section>
+
+<!-- Donate -->
 <section class="layout donateSection">
     <!-- Status/Donate -->
     <a id="status"></a>
@@ -50,21 +75,4 @@
 
    Donate Time
  --><div class="layout__item u-1/1 u-1/1-palm" ng-include="'app/partials/donateTime.html'"></div>
-</section>
-
-<!-- Now hiring -->
-<section class="layout">
-    <a id="hiring"></a>
-    <!-- Left side spacer or image -->
-    <div class="layout__item u-1/6 u-1/1-palm"></div><!--
-    Right side -- text
-  --><div class="layout__item u-4/6 u-1/1-palm" ng-include="'app/partials/nowHiring.html'"></div><!--
-    Right spacer 
-  --><div class="layout__item u-1/6 u-1/1-palm"></div>
-</section>
-
-<!-- Contact -->
-<section class="layout">
-    <a id="contact"></a>
-    <div class="layout__item u-5/5" ng-include="'app/partials/contact.html'"></div>
 </section>

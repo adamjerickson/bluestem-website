@@ -1,0 +1,50 @@
+.boxLink {
+    display: inline-block;
+    text-align: center;
+    border: 1px solid black;
+    border-radius: 4px;
+    
+    padding: 20px 20px;
+    width: 200px;
+    margin: 20px 0;
+
+    background-color: transparent;
+    color: white;
+    border-color: $blue;
+
+    &.boxLink--lg {
+      padding: 20px 20px;
+      width: 200px;
+      margin: 20px 0;
+    }
+
+    &.boxLink--md {
+      padding: 10px 10px;
+      width: 200px;
+      margin: 10px 0;
+    }
+
+    &.boxLink--sm {
+      padding: 5px 5px;
+      width: 200px;
+      margin: 5px 0;
+    }
+
+    &.boxLink--solid {
+      background-color: $blue;
+      color: white;
+      border-color: $blue;
+    }
+
+    &.boxLink--ghost {
+      background-color: transparent;
+      color: $blue;
+      border-color: $blue;
+    }
+
+    &.boxLink--ghost-dark {
+      background-color: transparent;
+      color: white;
+      border-color: white;
+    }
+  }

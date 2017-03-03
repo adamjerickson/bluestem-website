@@ -42,4 +42,41 @@
     &.layout--yellow {
         background-color: $yellow;
     }
+
+    &.layout--greenBorder {
+        border-bottom: 1px solid $green;
+    }
+
+    &.layout--blueBorder {
+        border-bottom: 1px solid $blue;
+    }
+
+    &.layout--purpleBorder {
+        border-bottom: 1px solid $purple;
+    }
+
+    &.layout--oliveBorder {
+        border-bottom: 1px solid $olive;
+    }
+
+    &.layout--dark-brownBorder {
+        border-bottom: 1px dotted $dark-brown;
+    }
+
+    &.layout--light-brownBorder {
+        border-bottom: 1px solid $light-brown;
+    }
+
+    &.layout--redBorder {
+        border-bottom: 1px solid $red;
+    }
+
+    &.layout--yellowBorder {
+        border-bottom: 1px solid $yellow;
+    }
+
+    &.layout--border {
+        border-bottom: 1px solid $color-gray-light;
+    }
+
 }

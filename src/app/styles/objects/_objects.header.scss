@@ -22,7 +22,7 @@ header {
     }
 
     @include media-query(palm) {
-        .school, .status, .method, .enroll, .donate {
+        .about, .status, .method, .enroll, .donate {
             display: none;
         }
     }

@@ -89,8 +89,8 @@ defaultConfig = {
   cache: true,
   debug: true,
   output: {
-    filename: 'bmes-app-[name].bundle.js',
-    sourceMapFilename: 'bmes-app-[name].map',
+    filename: 'bmes-app-[name]-2017-02-06.bundle.js',
+    sourceMapFilename: 'bmes-app-[name]-2017-02-06.map',
     chunkFilename: 'bmes-app-[id].chunk.js',
   },
   plugins: [

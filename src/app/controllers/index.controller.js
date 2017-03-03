@@ -10,6 +10,7 @@ function ControllerFn($rootScope, $scope, $state, $stateParams, $timeout, $http,
   $scope.getContacts = GetContacts;
   $scope.addContact = AddContact;
   $scope.newContact = NewContact;
+  $scope.toggle = Toggle;
 
   // Properties
   $scope.contact = $scope.newContact();
@@ -46,6 +47,18 @@ function ControllerFn($rootScope, $scope, $state, $stateParams, $timeout, $http,
     });
 
   // Internal methods
+  function Toggle(selector, displayStyle, e) {
+    var element = document.querySelector(selector);
+    if (element.style.display === 'none') {
+      element.style.display = displayStyle;
+      e.target.innerHTML = 'less';
+    } else {
+      element.style.display = 'none';
+      e.target.innerHTML = 'more';
+    }
+  }
+  
+  
   function Donate(amt, thing, e) {
     var description;
 

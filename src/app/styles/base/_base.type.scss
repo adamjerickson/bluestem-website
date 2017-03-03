@@ -6,6 +6,10 @@
   @extend small;
 }
 
+.text--tall {
+  margin-top: 2em;
+}
+
 pre {
   @extend textarea;
   background: $color-gray-light !important;
